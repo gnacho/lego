@@ -1,0 +1,34 @@
+Name = "DonDominio"
+Description = ''
+URL = "https://www.dondominio.com/"
+Code = "dondominio"
+Since = "v5.7.0"
+
+Example = '''
+DONDOMINIO_API_USER="xxx" \
+DONDOMINIO_API_PASSWORD="yyy" \
+lego run --dns dondominio -d '*.example.com' -d example.com
+'''
+
+Additional = '''
+## Description
+
+The API access requires credentials (`apiuser` and `apipasswd`) provided by DonDominio/MrDomain.
+
+The API is not designed to be used for mass requests: check the [usage policy](https://dondominio.dev/en/api/docs/usage-policy/).
+
+The `ttl` parameter of the `service/dnscreate/` action is not exposed and is never sent because the API rejects it.
+'''
+
+[Configuration]
+  [Configuration.Credentials]
+    DONDOMINIO_API_USER = "API user"
+    DONDOMINIO_API_PASSWORD = "API password"
+  [Configuration.Additional]
+    DONDOMINIO_API_URL = "API URL (Default: https://simple-api.dondominio.net)"
+    DONDOMINIO_POLLING_INTERVAL = "Time between DNS propagation check in seconds (Default: 10)"
+    DONDOMINIO_PROPAGATION_TIMEOUT = "Maximum waiting time for DNS propagation in seconds (Default: 300)"
+    DONDOMINIO_HTTP_TIMEOUT = "API request timeout in seconds (Default: 30)"
+
+[Links]
+  API = "https://dondominio.dev/en/api/docs/api/"

@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "errorCode": 0,
+  "errorCodeMsg": "",
+  "action": "service/dnslist",
+  "version": "1.0.27",
+  "responseData": {
+    "queryInfo": {
+      "page": 1,
+      "pageLength": 1000,
+      "results": 3,
+      "total": 3
+    },
+    "dns": [
+      {
+        "entityID": "SRV0000214277-000396072",
+        "name": "example.com",
+        "type": "A",
+        "ttl": "-",
+        "priority": "-",
+        "value": "127.0.0.1"
+      },
+      {
+        "entityID": "SRV0000214277-000396073",
+        "name": "_acme-challenge.example.com",
+        "type": "TXT",
+        "ttl": "-",
+        "priority": "-",
+        "value": "old"
+      },
+      {
+        "entityID": "SRV0000214277-000396074",
+        "name": "_acme-challenge.other.example.com",
+        "type": "TXT",
+        "ttl": "-",
+        "priority": "-",
+        "value": "unrelated"
+      }
+    ]
+  }
+}
